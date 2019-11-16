@@ -10,5 +10,6 @@ class ModelForm(forms.ModelForm):
     class Meta:
         model = Appointment
         fields = ['first_name','last_name','phone','date','message']
-
+    def get_absolute_url(self):
+        return reverse('post-detail', kwargs = {'id': self.pk})
     
